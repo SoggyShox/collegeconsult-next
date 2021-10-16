@@ -1,5 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
 
 import sgMail from '@sendgrid/mail';
 
@@ -9,7 +8,7 @@ type Data = {
 
 sgMail.setApiKey(String(process.env.SEND_GRID_API_KEY))
 
-export default function handler(req, res) {
+export default function handler(req: any, res: any) {
   if (req.method === 'POST') {
     console.log("hello")
     console.log(req.body);
@@ -20,7 +19,7 @@ export default function handler(req, res) {
   }
 }
 
-async function sendInviteEmail(requestbody) {
+async function sendInviteEmail(requestbody: any) {
   const email = {
     to: requestbody.requester_email,
     from: "college.student.connect@gmail.com",
