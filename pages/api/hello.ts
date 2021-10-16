@@ -7,7 +7,7 @@ type Data = {
   name: string
 }
 
-sgMail.setApiKey(process.env.SEND_GRID_API_KEY)
+sgMail.setApiKey(String(process.env.SEND_GRID_API_KEY))
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
