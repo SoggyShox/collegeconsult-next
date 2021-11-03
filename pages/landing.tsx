@@ -7,6 +7,8 @@ import {
   createTheme
 } from "@material-ui/core/styles";
 
+import Image from "next/image";
+
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
@@ -399,20 +401,23 @@ const Landing = () => {
         >
           <Grid item container xs={4} justify="center" alignItems="center">
             <Grid item className={classes.gridRestraint}>
-              <img
+              <Image
+              alt="icon"
                 className={classes.universityImage}
                 src="https://www.drought.gov/sites/default/files/hero/partners/UCLA-logo-blue.png"
               />
             </Grid>
           </Grid>
           <Grid xs={4}>
-            <img
+            <Image
+            alt="icon"
               className={classes.universityImage}
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWAmw_MoTwzhUhUJMBjJF23iASoR6Ljc7vMIpuQrcvrcDR-YVDQAr4j7DFBwKREwblIA&usqp=CAU"
             />
           </Grid>
           <Grid xs={4}>
-            <img
+            <Image
+            alt="icon"
               className={classes.universityImage}
               src="https://mdtoday.com/wp-content/uploads/2014/11/ucsd-logo-1.jpg"
             />
@@ -469,9 +474,11 @@ const Landing = () => {
             xs={12}
             sm={4}
           >
-            <img className={classes.numberIcon} src={oneIcon.src} />
+            <Image
+            alt="icon" className={classes.numberIcon} src={oneIcon.src} />
             <Typography variant="h6">Pick a consultant</Typography>
-            <img className={classes.instructionsImage} src={pickConsultant.src} />
+            <Image
+            alt="icon" className={classes.instructionsImage} src={pickConsultant.src} />
             <Typography variant="body2" color="textSecondary">
               Choose from a wide array of consultants from UCLA, HMC, and more!
             </Typography>
@@ -486,11 +493,13 @@ const Landing = () => {
             xs={12}
             sm={4}
           >
-            <img className={classes.numberIcon} src={twoIcon.src} />
+            <Image
+            alt="icon" className={classes.numberIcon} src={twoIcon.src} />
 
             <Typography variant="h6">Share your goals</Typography>
 
-            <img className={classes.instructionsImage} src={shareYourGoals.src} />
+            <Image
+            alt="icon" className={classes.instructionsImage} src={shareYourGoals.src} />
 
             <Typography variant="body2" color="textSecondary">
               Share what topics you would like to discuss with your consultant!
@@ -505,11 +514,13 @@ const Landing = () => {
             xs={12}
             sm={4}
           >
-            <img className={classes.numberIcon} src={threeIcon.src} />
+            <Image
+            alt="icon" className={classes.numberIcon} src={threeIcon.src} />
 
             <Typography variant="h6">We connect you</Typography>
 
-            <img className={classes.instructionsImage} src={weConnect.src} />
+            <Image
+            alt="icon" className={classes.instructionsImage} src={weConnect.src} />
 
             <Typography variant="body2" color="textSecondary">
               We will autobook you for a mutually beneficial time!
@@ -546,7 +557,7 @@ const Landing = () => {
           className={classes.gridthing}
         >
           {collegepeople.map(person => (
-            <GridPerson person={person} />
+            <GridPerson person={person} key={person.name}/>
           ))}
         </Grid>
       </Container>
